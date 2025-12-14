@@ -1,12 +1,18 @@
 name: Hello World
+# Workflow ကို main branch သို့ push လုပ်သောအခါတိုင်း run စေရန် သတ်မှတ်ခြင်း
+on: 
+  push:
+    branches:
+      - main
 
-on: push
-
+# Workflow တွင် hello-job တစ်ခု ပါဝင်သည်
 jobs:
-    hello-job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Echo test
-          run: echo "Hello, world!"
-
-
+  hello-job:
+    # Job ကို ubuntu-latest runner ပေါ်တွင် run စေရန် သတ်မှတ်ခြင်း
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Echo text ဟူသော အမည်ဖြင့် command တစ်ခု run ခြင်း
+      - name: Echo text
+        # လိုအပ်သော command ကို run ခြင်း
+        run: echo "Hello, world!"
